@@ -1,0 +1,23 @@
+<app-sidebar></app-sidebar>
+<div class="wrapper">
+  <div class="row">
+    <div class="col-sm-12 col-md-3 col-lg-3 chat-seccion">
+      <div class="chat-wrapper">
+        <div class="search-add">
+          <div class="search-wrapper">
+            <input type="text" placeholder="Buscar">
+            <i class="uil uil-search"></i>
+          </div>
+          <span><i class="uil uil-plus mx-2"></i></span>
+        </div>
+      </div>
+      <app-card-user [data]="listUser" (conversation)="getConversation($event)"></app-card-user>
+    </div>
+    <div class="col-sm-12 col-md-6 row-cols-lg-6 message-seccion">
+      <app-messages [data]="conversation"></app-messages>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-2">
+      <app-profile [data]="conversation"></app-profile>
+    </div>
+  </div>
+</div>

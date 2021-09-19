@@ -1,0 +1,62 @@
+<ng-container *ngIf="!data">
+  <div class="not-data">
+    <p>Por favor seleciona el usuario con el que deseas comunicarte </p>
+  </div>
+
+</ng-container>
+<ng-container *ngIf="data">
+  <div class="message-wrapper">
+    <div class="header">
+      <div class="header-wrapper">
+        <div class="name-user">
+          <h3 class="name" *ngIf="data.from === user.id">{{data.userTo.name}}</h3>
+          <h3 class="name" *ngIf="data.from !== user.id">{{data.userFrom.name}}</h3>
+          <span class="status"></span>
+          <p class="status-user">Online</p>
+        </div>
+        <div class="icon">
+          <span><i class="fas fa-folder"></i></span>
+          <span><i class="fas fa-phone-alt mx-3"></i></span>
+          <span><i class="fas fa-video"></i></span>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="messages-chat">
+      <ul>
+        <li *ngFor="let message of messageList"
+          [ngClass]="{'message-from': message.from === user.id, 'message-to' :message.from !==user.id  }">
+          <div class="message-user">
+            <div class="user">
+              <div class="photo">
+                <img [src]="message.user.image" alt="">
+              </div>
+              <p class="text"> {{ message.message }} </p>
+            </div>
+            <p class="time"> {{message.date}}</p>
+          </div>
+        </li>
+      </ul>
+      <!--  [ngClass]="{'message-from': msg.from===msg.user.id, 'message-to' :msg.from !==msg.user.id  }" -->
+
+    </div>
+    <div class="send-message">
+      <div class="send-wrapper">
+        <div class="icon">
+          <span><i class="fas fa-grin"></i></span>
+          <span><i class="uil uil-paperclip mx-3"></i></span>
+        </div>
+        <div class="send">
+          <input type="text" [(ngModel)]="message" placeholder="Enviar mensaje" (keyup.enter)="sendMessage()">
+        </div>
+        <div class="btn-send">
+          <button (click)="sendMessage()">
+            <i class="uil uil-message"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</ng-container>

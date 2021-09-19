@@ -1,0 +1,21 @@
+<div class="d-flex align-items-center align-content-center justify-content-center pt-5">
+
+  <div class="card shadow-sm p-3 mb-5 bg-body rounded">
+    <h1 class="text-center">Bienvenido</h1>
+    <p class=" text-center mt-3">Para ingresar al chat debes ingresar un nombre y seleccionar una imagen</p>
+    <form class="mt-5 mx-auto" [formGroup]="form" (submit)="login()">
+      <div class="mb-3 d-flex align-items-center justify-content-center">
+        <label for="exampleInputEmail1" class="form-label">Nombre </label>
+        <input type="text" class="form-control mx-4" formControlName="name">
+        <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Ingresar</button>
+      </div>
+    </form>
+
+    <div class="d-flex justify-content-center align-items-center mx-1">
+      <div *ngFor="let item of list">
+        <img [src]="item.image" alt="" (click)="selectedImage(item.image)">
+      </div>
+    </div>
+
+  </div>
+</div>

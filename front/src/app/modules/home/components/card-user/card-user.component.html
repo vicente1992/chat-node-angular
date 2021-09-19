@@ -1,0 +1,18 @@
+<div class="user-wrapper">
+  <div class="card" *ngFor="let item of data">
+    <div class="card-info" (click)="createRoom(item)">
+      <div class="user-image">
+        <img [src]="item.image" alt="">
+      </div>
+      <div class="user-name">
+        <p class="name">{{item.name}}</p>
+        <p class="coment">{{item.lastName}}</p>
+      </div>
+    </div>
+
+    <span class="message">
+      <p class="number">0</p>
+    </span>
+  </div>
+
+</div>

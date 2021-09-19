@@ -1,0 +1,201 @@
+@import "src/variables";
+
+.not-data {
+  padding: 50px;
+}
+.message-wrapper {
+  .header {
+    border-bottom: 1px solid #ecf0f0;
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0 30px 30px;
+      .name-user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .name {
+          font-size: 22px;
+          font-weight: 500;
+          color: #5a636c;
+        }
+        .status {
+          background-color: $color-message-primary;
+          width: 8px;
+          height: 8px;
+          border-radius: 100px;
+          margin: 0 5px 0 20px;
+        }
+        .status-user {
+          color: #b8c3cb;
+        }
+      }
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          font-size: 18px;
+          font-weight: 800;
+          i {
+            cursor: pointer;
+            color: #98a7b3;
+          }
+        }
+        .arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 30px;
+          width: 30px;
+          border-radius: 100px;
+          background-color: $bg-color-primary;
+          position: relative;
+          right: -15px;
+          .fas {
+            cursor: pointer;
+            color: #98a7b3;
+          }
+        }
+      }
+    }
+  }
+
+  .messages-chat {
+    padding: 25px 35px;
+    ul {
+      list-style: none;
+    }
+    .message-to {
+      .message-user {
+        .user {
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+
+          .photo {
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50px;
+            }
+          }
+          .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            background-color: #ffffff;
+            padding: 15px;
+            color: #d0d6db;
+            font-size: 18px;
+            height: 35px;
+            border-radius: 0 4px 4px 0;
+            font-size: 14px;
+          }
+        }
+        .time {
+          font-size: 10px;
+          color: #c7d2d7;
+          margin-bottom: 10px;
+          margin-left: 62px;
+          margin-top: -12px;
+        }
+      }
+    }
+
+    .message-from {
+      .message-user {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-end;
+        .user {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          margin-bottom: 8px;
+          .photo {
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50px;
+            }
+          }
+          .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            background-color: $color-message-primary;
+            padding: 15px;
+            height: 35px;
+            color: white;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+          }
+        }
+        .time {
+          font-size: 10px;
+          color: #c7d2d7;
+          margin-bottom: 10px;
+          margin-right: 61px !important;
+        }
+      }
+    }
+  }
+
+  .send-message {
+    background-color: $color-white;
+    position: fixed;
+    bottom: 0;
+    width: 51%;
+    display: block;
+    .send-wrapper {
+      margin: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .icon {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-content: center;
+
+        span {
+          font-size: 24px;
+          font-weight: 800;
+          color: #98a7b3;
+          cursor: pointer;
+        }
+      }
+      .send {
+        width: 100%;
+        input {
+          display: block;
+          width: 95%;
+          background-color: $color-white;
+          font-size: 16px;
+          height: 30px;
+          border: none;
+          outline: none;
+        }
+      }
+      .btn-send {
+        button {
+          border: 0;
+          background-color: transparent;
+          cursor: pointer;
+          .uil {
+            font-size: 24px;
+            color: $color-message-primary;
+          }
+        }
+      }
+    }
+  }
+}

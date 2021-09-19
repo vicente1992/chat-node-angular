@@ -1,0 +1,33 @@
+<div class="menu">
+  <div class="sidebar-gap">
+    <div class="sidebar ">
+      <ul class="sidebar-menu">
+        <li class="sidebar-item d-flex align-items-center justify-content-center">
+          <div class="sidebar-bell">
+            <img [src]="user.image" alt="">
+          </div>
+        </li>
+        <li class="sidebar-item">
+          <div class="sidebar-separator"></div>
+        </li>
+        <li [routerLink]="item?.path" class="sidebar-item d-flex  align-items-center justify-content-center"
+          *ngFor="let item of menu" [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['sidebar-active']">
+          <div class="sidebar-button d-flex d-all-center">
+            <i [className]="item?.icon"></i>
+          </div>
+          <span class="active"></span>
+        </li>
+      </ul>
+      <ul class="sidebar-menu">
+        <li class="sidebar-footer sidebar-item">
+          <div class="sidebar-separator"></div>
+        </li>
+        <li class="sidebar-item d-flex d-all-center" (click)="logout()">
+          <div class="sidebar-button d-flex d-all-center">
+            <i class="uis uis-signout"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
